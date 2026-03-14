@@ -1,0 +1,37 @@
+[project]
+name = "python-kt-1"
+version = "0.1.0"
+description = "IThub Санкт-Петербург (весна 2026)"
+readme = "README.md"
+authors = [
+    { name = "Lex Trofimov", email = "daslef93@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.3",
+    "nltk>=3.9.3",
+    "rich>=14.3.2",
+    "spacy>=3.8.11",
+    "textual>=7.5.0",
+    "typer>=0.21.1",
+    "wordcloud>=1.9.6",
+]
+
+[project.scripts]
+python-kt-1 = "python_kt_1:app"
+
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyfakefs>=6.1.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.15.1",
+    "ty>=0.0.15",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v --no-header --tb=short --cov=python_kt_1 --cov-report=term-missing"
