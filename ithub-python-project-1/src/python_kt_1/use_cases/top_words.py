@@ -27,12 +27,12 @@ def top_words(
     if normalize_mode == 'lemmatization':
         normalize_words = lemmatization(words_after_filter)
     else: normalize_words = stamming(words_after_filter)
-    print(normalize_words)
-    # clean_normalize_words = clean_words(normalize_words)    
-    # sorted_words_counter = sorted(_count_words(clean_normalize_words).items(), key=sort_by_count)
+
+    clean_normalize_words = clean_words(normalize_words)    
+    sorted_words_counter = sorted(_count_words(clean_normalize_words).items(), key=sort_by_count)
     
-    # print(sorted_words_counter)
-    # return sorted_words_counter
+    print(sorted_words_counter)
+    return sorted_words_counter
 
     """Подсчет топ-N-важных слов.
 
