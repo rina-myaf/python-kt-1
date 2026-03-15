@@ -18,7 +18,9 @@ def sort_by_count(item: tuple[str, int]) -> int:
 def top_words(
     text:str,
     normalize_mode: Literal["stemming", "lemmatization"] = "lemmatization",
-    pos: list[str] = ["__all__"]):
+    pos: list[str] = ["__all__"]
+    #number: int = None
+):
     
     
     initial_words = tokenize_text(text)["words"]
@@ -31,8 +33,12 @@ def top_words(
     clean_normalize_words = clean_words(normalize_words)    
     sorted_words_counter = sorted(_count_words(clean_normalize_words).items(), key=sort_by_count)
     
-    print(sorted_words_counter)
-    return sorted_words_counter
+    #if number == None:
+        print(sorted_words_counter)
+        return sorted_words_counter
+    #else:
+        #print(sorted_words_counter[:number])
+        #return sorted_words_counter[:number]
 
     """Подсчет топ-N-важных слов.
 
