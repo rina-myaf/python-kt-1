@@ -117,7 +117,8 @@ def top_words(
     ],
     output: pathlib.Path | None = None,
     normalize_mode: Literal["stemming", "lemmatization"] = "stemming",
-    pos: list[str] = ["__all__"]
+    pos: list[str] = ["__all__"],
+    #number: int = None
 ):
     """Подсчет топ-N-важных слов.
 
@@ -134,3 +135,4 @@ def top_words(
 
     text = input.read_text(encoding="utf-8")
     result = use_cases.top_words(text, normalize_mode, pos)
+    #return result
